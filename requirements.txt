@@ -1,1 +1,2 @@
 PyGithub>=1.50
+pandas>=0.24.0
