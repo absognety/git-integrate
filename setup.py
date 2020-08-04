@@ -11,7 +11,5 @@ setup(
     install_requires=[
         'PyGithub'
     ],
-    entry_points={
-        'console_scripts': ['gitapi=git_integrate.driver:main']
-    }
+    python_requires = '>=3.6'
 )
