@@ -21,12 +21,37 @@ except:
     pass
     
 def initialize_repo(repo_name:str):
+    """
+    params:
+        repo_name:str: Repository name (format: organization_name/repository_name)
+    output:
+        Repository Object
+    """
     #Instantiate a Github object
     git = Github(login_or_token=access_token)
     repo = git.get_repo(repo_name)
     return repo
 
-def store_issue_attrs(repo_name:str,state:str,since:str) -> tuple:
+def store_issue_attrs(repo_name:str,state:str,since:datetime) -> tuple:
+    """
+
+    Parameters
+    ----------
+    repo_name : str
+        Repository name (format: organization_name/repository_name)
+    state : str
+        State of issues ('open'/'closed')
+    since : str
+        a datetime object
+
+    Returns
+    -------
+    tuple
+        Tuple of two tables:
+            1. Detailed issues information parsed from API response
+            2. Computed statistics from given input payload
+
+    """
     repo = initialize_repo(repo_name)
     df_dict = defaultdict(list)
     for issue in repo.get_issues(state=state,since=since):
@@ -167,6 +192,23 @@ def compute_stats_issues(repo_name:str,state='open',
 
 def populate_tables(repo_name:str,state='open',
                          months=2):
+    """
+
+    Parameters
+    ----------
+    repo_name : str
+        Repository name (format: organization_name/repository_name).
+    state : TYPE, optional
+        State of issues ('open'/'closed'). The default is 'open'.
+    months : TYPE, optional
+        Window of number of months. The default is 2.
+
+    Returns
+    -------
+    TYPE
+        exit status (0/fallback string: 'No issues created during observed window').
+
+    """
     final,issues = compute_stats_issues(repo_name,state,months)
     conn = create_connection(os.path.join(thisdir,"sqlite.db"))
     if (len(final) == 0) and (issues.shape[0] == 0):
