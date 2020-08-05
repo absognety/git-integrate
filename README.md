@@ -65,3 +65,5 @@ Schedule this script by generating a crontab schedule for every 30 min/1 hour et
 |------------|-------------------|---------------------|---------------------|--------------------|--------------------|
 | 858127     | pandas-dev/pandas | 2020-06-05 11:22:37 | 2020-08-05 11:17:48 | 0.418114143920596  | 4.71464019851117   |
 | 858127     | pandas-dev/pandas | 2020-06-04 23:43:22 | 2020-08-04 23:38:36 | 0.416770963704631  | 4.75594493116396   |  
+
+Checkout `git_integrate/sqlite.db` to have a peek at the tables.  
