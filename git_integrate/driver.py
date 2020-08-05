@@ -47,9 +47,9 @@ def store_issue_attrs(repo_name:str,state:str,since:datetime) -> tuple:
     Returns
     -------
     tuple
-        Tuple of two tables:
-            1. Detailed issues information parsed from API response
-            2. Computed statistics from given input payload
+        Tuple of two objects:
+            1. Attributes of all issues in a dictionary container
+            2. github.Repository.Repository object
 
     """
     repo = initialize_repo(repo_name)
