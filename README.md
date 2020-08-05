@@ -34,7 +34,7 @@ For example:
 import git_integrate
 result = git_integrate.populate_tables('pandas-dev/pandas') #give repo_name (org_name/repo_name) - check the docstrings using help(git_integrate)
 ```
-Schedule this script by generating a crontab schedule fir every 30 min/1 hour etc (More advanced workflows can be managed by prefect, airflow - open to user).  
+Schedule this script by generating a crontab schedule for every 30 min/1 hour etc (More advanced workflows can be managed by prefect, airflow - open to user).  
   
 ## Known Bugs:  
 + Currently this application is using rate-limit values of a github API (5000 requests per hour).  
