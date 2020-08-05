@@ -28,6 +28,12 @@ In order to restore the simplicity of this project, the features embedded this p
 2. Navigate to git repository directory (cd `git-integrate`).  
 3. Do `pip install -e .`  
 4. `import git_integrate` and start using this package`.  
+5. Setup a custom script where you can have only 2 lines:  
+```
+import git_integrate
+result = git_integrate.populate_tables('pandas-dev/pandas')
+```
+Schedule this script by generating a crontab schedule fir every 30 min/1 hour etc (More advanced workflows can be managed by prefect, airflow - open to user).  
   
 ## Known Bugs:  
 + Currently this application is using rate-limit values of a github API (5000 requests per hour).  
