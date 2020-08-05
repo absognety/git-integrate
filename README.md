@@ -51,6 +51,7 @@ In order to restore the simplicity of this project, the features embedded this p
 | 167174     | 667938072 | true            | Event;Needs review                      | YYYY | Event: Remove the event.which shim                               | open  | 2020-07-29 15:32:54 | 2020-07-29   | 2020-07-31 00:28:13 | 2020-07-31   |             |             |
 | 167174     | 667933925 | true            | Needs review;Tests                      | ZZZZ | Tests: Recognize callbacks with dots in the Node.js mock server  | open  | 2020-07-29 15:26:54 | 2020-07-29   | 2020-07-30 01:52:19 | 2020-07-30   |             |             |  
   
+    
 2. Computed KPIS table:  
   
 | project_id | project           | from                | to                  | avg_defect_density | perf_issue_percent |
