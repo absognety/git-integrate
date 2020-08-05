@@ -9,7 +9,8 @@ setup(
     author_email='vikasch.1994@gmail.com',
     packages=find_packages(),
     install_requires=[
-        'PyGithub'
+        'PyGithub',
+        'pandas>=0.24.0'
     ],
     python_requires = '>=3.6'
 )
