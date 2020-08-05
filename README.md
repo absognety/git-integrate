@@ -29,9 +29,10 @@ In order to restore the simplicity of this project, the features embedded this p
 3. Do `pip install -e .`  
 4. `import git_integrate` and start using this package`.  
 5. Setup a custom script where you can have only 2 lines:  
+For example:  
 ```
 import git_integrate
-result = git_integrate.populate_tables('pandas-dev/pandas')
+result = git_integrate.populate_tables('pandas-dev/pandas') #give repo_name (org_name/repo_name) - check the docstrings using help(git_integrate)
 ```
 Schedule this script by generating a crontab schedule fir every 30 min/1 hour etc (More advanced workflows can be managed by prefect, airflow - open to user).  
   
