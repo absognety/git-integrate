@@ -6,7 +6,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import dateutil
 import logging
-from dbstore import create_connection
+from .dbstore import create_connection
 
 logger = logging.getLogger("app")
 logger.setLevel(logging.INFO)
