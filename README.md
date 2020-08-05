@@ -24,6 +24,7 @@ In order to restore the simplicity of this project, the features embedded this p
 6. Add `.gitignore` to ignore redundant local cache, untracked files, hidden system files, files generated at run time.  
 
 ## How to deploy this:  
+0. Create a personal access token for your github account and add it to the environment variables so that sdk will read it. (In Linux based systems: Add it to ~/.bashrc - export GIT_ACCESS_TOKEN=XXXXXXXXXXXXXXXXXYYYYYYYYY).  
 1. Clone this repository using `git clone https://github.com/absognety/git-integrate.git`.  
 2. Navigate to git repository directory (cd `git-integrate`).  
 3. Do `pip install -e .`  
@@ -43,7 +44,8 @@ Schedule this script by generating a crontab schedule for every 30 min/1 hour et
   - 1. Introducing delays.  
   - 2. Run multiple threads of the same process (`Thread spawning`), (Use `multiprocessing`) - But maintaining this complex application with metadata and log management is challenging.  
   - 3. Using `cache stores` like `Redis` (or use existing db) to avoid repetitively hitting the API for events that are already consumed - This will remove the tendency of having dupicate records in db.  
-  
++ credentials/access tokens configuration is a bit of a bottleneck. (We can research generation of token on the fly using API itself - haven't done it yet).  
+
 ## What would I have done if I had more time:  
 + Currently code written is using rule based logic to look for issues labeled `Bug` and `Performance` with conjunctions to compute defect density and performance issue percentage. We can use NLP based techniques here to build a vocabulary of words used in labels and Build a text similarity model that gives words similar to `Bug` and `Performance` - This will give us much more accurate numbers of defect density and performance issue percentages.  
 + The lag proposed in the assignment is 30 min, but I built my solution in such a way that I am storing last known timestamp when the run is happening in a tempfile and that tempfile will be read in the next run if tempfile exists, if not it will hit API for last 2 months of events.  
