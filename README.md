@@ -13,7 +13,7 @@ In order to restore the simplicity of this project, the features embedded this p
 **Completed two of 3 KRs (KR1 & KR3)**.  
   
 ## Number of KRs not Completed:  
-**KR2 not completed**.  
+**KR2 not completed Due to time constraints**. (This requires capturing `created_time` and `merge_time` of all issues with `is_pull_request` flag as `true` and computing the difference and storing it in our db - Essentially another function that does this task).  
 
 ## Development steps:  
 1. This codebase of this project is distributed as a python package.  
@@ -40,4 +40,20 @@ In order to restore the simplicity of this project, the features embedded this p
 ## What would I have done if I had more time:  
 + Currently code written is using rule based logic to look for issues labeled `Bug` and `Performance` with conjunctions to compute defect density and performance issue percentage. We can use NLP based techniques here to build a vocabulary of words used in labels and Build a text similarity model that gives words similar to `Bug` and `Performance` - This will give us much more accurate numbers of defect density and performance issue percentages.  
 + The lag proposed in the assignment is 30 min, but I built my solution in such a way that I am storing last known timestamp when the run is happening in a tempfile and that tempfile will be read in the next run if tempfile exists, if not it will hit API for last 2 months of events.  
-+ This solution can expect a loss of data of 1 or 2 events based on way it is implemented now, (Example: if an issue is created in the window before last saved timestamp and current timestamp - Much more efficient solution is setup a producer and consumer (Maybe a kafka solution) to have continuous stream of events
++ This solution can expect a loss of data of 1 or 2 events based on way it is implemented now, (Example: if an issue is created in the window before last saved timestamp and current timestamp - Much more efficient solution is setup a producer and consumer (Maybe a kafka solution) to have continuous stream of events.  
+
+## Output schemas:  
+1. Issues detailed table:  
+  
+| project_id | issue_id  | is_pull_request | labels                                  | body | title                                                            | state | created_time        | created_date | updated_time        | updated_date | closed_time | closed_date |
+|------------|-----------|-----------------|-----------------------------------------|------|------------------------------------------------------------------|-------|---------------------|--------------|---------------------|--------------|-------------|-------------|
+| 167174     | 668193508 | true            | Attributes;Behavior Change;Needs review | XXXX | Attributes: Drop the `toggleClass(boolean\|undefined)` signature | open  | 2020-07-29 21:57:20 | 2020-07-29   | 2020-07-30 23:30:32 | 2020-07-30   |             |             |
+| 167174     | 667938072 | true            | Event;Needs review                      | YYYY | Event: Remove the event.which shim                               | open  | 2020-07-29 15:32:54 | 2020-07-29   | 2020-07-31 00:28:13 | 2020-07-31   |             |             |
+| 167174     | 667933925 | true            | Needs review;Tests                      | ZZZZ | Tests: Recognize callbacks with dots in the Node.js mock server  | open  | 2020-07-29 15:26:54 | 2020-07-29   | 2020-07-30 01:52:19 | 2020-07-30   |             |             |  
+  
+2. Computed KPIS table:  
+  
+| project_id | project           | from                | to                  | avg_defect_density | perf_issue_percent |
+|------------|-------------------|---------------------|---------------------|--------------------|--------------------|
+| 858127     | pandas-dev/pandas | 2020-06-05 11:22:37 | 2020-08-05 11:17:48 | 0.418114143920596  | 4.71464019851117   |
+| 858127     | pandas-dev/pandas | 2020-06-04 23:43:22 | 2020-08-04 23:38:36 | 0.416770963704631  | 4.75594493116396   |  
