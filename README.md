@@ -4,7 +4,7 @@
   
 ## Requirements:  
   
-**Objective** : Improve the overall development process quality of a github project    
+**Objective** : Improve the overall development process quality of a github project.KPIs Identified:  
 **KPI1** : Average defect density in GitHub commits must not exceed X  
 **KPI2** : Maximum average time to merge a PR into master branch must not exceed Y  
 **KPI3** : A minimum of Z performance improvement issue percentage.  
@@ -61,9 +61,9 @@ Schedule this script by generating a crontab schedule for every 30 min/1 hour et
   - 3. Using `cache stores` like `Redis` (or use existing db) to avoid repetitively hitting the API for events that are already consumed - This will remove the tendency of having dupicate records in db.  
 + credentials/access tokens configuration is a bit of a bottleneck. (We can research generation of token on the fly using API itself - haven't done it yet).  
 
-## What would I have done if I had more time:  
+## Future Ideas:  
 + Currently code written is using rule based logic to look for issues labeled `Bug` and `Performance` with conjunctions to compute defect density and performance issue percentage. We can use NLP based techniques here to build a vocabulary of words used in labels and Build a text similarity model that gives words similar to `Bug` and `Performance` - This will give us much more accurate numbers of defect density and performance issue percentages.  
-+ The lag proposed in the assignment is 30 min, but I built my solution in such a way that I am storing last known timestamp when the run is happening in a tempfile and that tempfile will be read in the next run if tempfile exists, if not it will hit API for last 2 months of events based on updated time attribute.      
++ The lag proposed for now is 30 min, but I built my solution in such a way that I am storing last known timestamp when the run is happening in a tempfile and that tempfile will be read in the next run if tempfile exists, if not it will hit API for last 2 months of events based on updated time attribute.      
 + This solution can expect a loss of data of 1 or 2 events based on way it is implemented now, (Example: if an issue is created in the window before last saved timestamp and current timestamp - Much more efficient solution is setup a producer and consumer (Maybe a kafka solution) to have continuous stream of events.  
 
 ## Output schemas:  
