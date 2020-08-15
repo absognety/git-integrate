@@ -5,9 +5,9 @@
 ## Requirements:  
   
 **Objective** : Improve the overall development process quality of a github project    
-**KR1** : Average defect density in GitHub commits must not exceed X  
-**KR2** : Maximum average time to merge a PR into master branch must not exceed Y  
-**KR3** : A minimum of Z performance improvement issue percentage.  
+**KPI1** : Average defect density in GitHub commits must not exceed X  
+**KPI2** : Maximum average time to merge a PR into master branch must not exceed Y  
+**KPI3** : A minimum of Z performance improvement issue percentage.  
   
 ## Definitions of metrics:  
   
@@ -21,11 +21,11 @@ In order to restore the simplicity of this project, the features embedded this p
   - Parsing of API responses and storing them in selective RDBMS schema (sqlite DB store is used in this project).  
   - Populate sqlite DB tables with updated issues information for every N minuties/hours (N is arbitrary).  
   
-## Number of KRs Completed:  
-**Completed two of 3 KRs (KR1 & KR3)**.  
+## Number of KPIs Completed:  
+**Completed two of 3 KPIs (KPI1 & KPI3)**.  
   
-## Number of KRs not Completed:  
-**KR2 not completed Due to time constraints**. (This requires capturing `created_time` and `merge_time` of all issues with `is_pull_request` flag as `true` and computing the difference and storing it in our db - Essentially another function that does this task).  
+## Number of KPIs not Completed:  
+**KPI2 not completed Due to time constraints**. (This requires capturing `created_time` and `merge_time` of all issues with `is_pull_request` flag as `true` and computing the difference and storing it in our db - Essentially another function that does this task).  
 
 ## Development steps:  
 1. This codebase of this project is distributed as a python package.  
