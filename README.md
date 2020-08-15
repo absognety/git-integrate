@@ -27,8 +27,8 @@ In order to restore the simplicity of this project, the features embedded this p
 ## Number of KPIs Completed:  
 **Completed two of 3 KPIs (KPI1 & KPI3)**.  
   
-## Number of KPIs not Completed:  
-**KPI2 not completed Due to time constraints**. (This requires capturing `created_time` and `merge_time` of all issues with `is_pull_request` flag as `true` and computing the difference and storing it in our db - Essentially another function that does this task).  
+## KPIs which are Work in Progress:  
+This requires capturing `created_time` and `merge_time` of all issues with `is_pull_request` flag as `true` and computing the difference and storing it in our db - Essentially another function that does this task.  
 
 ## Development steps:  
 1. This codebase of this project is distributed as a python package.  
