@@ -9,7 +9,10 @@
 **KPI2** : Maximum average time to merge a PR into master branch must not exceed Y  
 **KPI3** : A minimum of Z performance improvement issue percentage.  
   
-## Definitions of metrics:  
+Github integration that calculates these for a list of projects and updates them every 30-minutes and keeps a record of all the computations in sql/nosql DB store. Try to retain historical data of all these metrics over time to allow data scientists to build models on top of this.  
+  
+  
+## Definitions of metrics/KPIs:  
   
 **Defect density** = (Number of issues with the label bug)/Total number of issues.  
 **Performance issue %** = ((Number of issues with the label performance)/Total number of issues) X 100.  
