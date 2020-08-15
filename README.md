@@ -2,6 +2,18 @@
 ## What is it?  
 **git-integrate** is a python package for flexible and seamless integration with Github to parse and collect crucial information about github repositories and store them in schema of your choice (NoSQL/RDBMS/Graph data stores). The objective of this package is to capture important KPIs to understand how the user behaviour is flowing across time with respect to commits/pull requests/issues/subscribers/watchers/stargazers/forks etc.  
   
+## Requirements:  
+  
+**Objective** : Improve the overall development process quality of a github project    
+**KR1** : Average defect density in GitHub commits must not exceed X  
+**KR2** : Maximum average time to merge a PR into master branch must not exceed Y  
+**KR3** : A minimum of Z performance improvement issue percentage.  
+  
+## Definitions of metrics:  
+  
+**Defect density** = (Number of issues with the label bug)/Total number of issues.  
+**Performance issue %** = ((Number of issues with the label performance)/Total number of issues) X 100.  
+  
 ## Main features:  
 In order to restore the simplicity of this project, the features embedded this project are limited.  
 + Currently the subroutines added to this codebase will handle the following:  
