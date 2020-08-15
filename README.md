@@ -18,7 +18,7 @@ Github integration that calculates these for a list of projects and updates them
 **Performance issue %** = ((Number of issues with the label performance)/Total number of issues) X 100.  
   
 ## Main features:  
-In order to restore the simplicity of this project, the features embedded this project are limited.  
+In order to restore the simplicity of this intitative for now, the features embedded in this project are limited.  
 + Currently the subroutines added to this codebase will handle the following:  
   - Perform REST API calls to [Github API v3](https://docs.github.com/en/rest) to capture the attributes associated with all issues of a project (Including pull requests).  
   - Parsing of API responses and storing them in selective RDBMS schema (sqlite DB store is used in this project).  
